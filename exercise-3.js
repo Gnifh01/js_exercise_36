@@ -4,15 +4,17 @@ class Person {
     this.lastName = lastName;
   }
 
-  static fromObject(object) {
-    console.log(object instanceof Person);
+  static fromObject(value) {
+    const person_2 = new Person(value.nome, value.cognome);
+    return person_2
   }
 }
 
 const obj = {
-  firstName: 'Mario',
-  lastName: 'Rossi'
+  nome: "Mario",
+  cognome: "Rossi",
 };
 
 const person = Person.fromObject(obj);
-console.log(`${obj.firstName} ${obj.lastName}`);
+
+console.log(`${person.firstName} ${person.lastName}`);
